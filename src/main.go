@@ -2,20 +2,11 @@ package main
 
 import (
 	"fmt"
+	"go-workspace/src/pattern/factory"
 )
 
 func main() {
 	fmt.Println("HI")
-	ak47, _ := getGun("ak47")
-	musket, _ := getGun("musket")
-
-	printDetails(ak47)
-	printDetails(musket)
-}
-
-func printDetails(g IGun) {
-	fmt.Printf("Gun: %s", g.getName())
-	fmt.Println()
-	fmt.Printf("Power: %d", g.getPower())
-	fmt.Println()
+	ak47, _ := factory.GetGun("ak47")
+	factory.PrintDetails(ak47)
 }

@@ -2,7 +2,7 @@ package factory
 
 import "fmt"
 
-func getGun(gunType string) (IGun, error) {
+func GetGun(gunType string) (IGun, error) {
 	if gunType == "ak47" {
 		return newAk47(), nil
 	}
@@ -11,4 +11,11 @@ func getGun(gunType string) (IGun, error) {
 	}
 
 	return nil, fmt.Errorf("Wrong gun type passed")
+}
+
+func PrintDetails(g IGun) {
+	fmt.Printf("Gun: %s", g.getName())
+	fmt.Println()
+	fmt.Printf("Power: %d", g.getPower())
+	fmt.Println()
 }
